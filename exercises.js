@@ -55,7 +55,7 @@ const maxNegMinPos = (arr) => {
 };
 
 const arrTask3 = [12, -13, 14, 4, 2, -1, -18];
-maxNegMinPos(arrTask3);
+// maxNegMinPos(arrTask3);
 
 // ======================================
 // 4. Create function returns the nth element of a fibonacci series.
@@ -114,16 +114,85 @@ const fizzBuzz = (n) => {
   }
 };
 
-fizzBuzz(20);
+// fizzBuzz(20);
+
+// ======================================
+// 7. Write a GCD function gcd(a, b)
+const gcd = (a, b) => {
+  let min = 0;
+  if (a < b) {
+    min = a;
+  } else {
+    min = b;
+  }
+  for (let i = 0; i < min; i++) {
+    if (a % i === 0 && b % i === 0) {
+      gcdNum = i;
+    }
+  }
+  return gcdNum;
+};
+
+console.log(gcd(10, 15));
+
+// ======================================
+// 8. Array.sort modification
+const arr = [3, 2, 1, 12, 13, 11];
+
+const sortModify = (arr) => {
+  let min = Infinity;
+  let sortedArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (j = 0; j < arr.length; j++) {
+      if (min > arr[j]) {
+        min = arr[j];
+      }
+    }
+    sortedArr.push(min);
+
+    // remove sorted element from input array
+    let indexOfSmallNum = arr.indexOf(min);
+    arr.splice(indexOfSmallNum, 1);
+
+    min = Infinity;
+
+    i = -1;
+  }
+  return sortedArr;
+};
+
+// console.log(sortModify(arr));
 
 // ======================================
 // 9. prime(n) returns an array of first n prime numbers
-const prime = (n) => {
-  let i = 1;
-  while (i <= n) {}
+const isPrime = (n) => {
+  for (let i = 2; i <= n / 2; i++) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
 };
 
-// prime(5);
+const prime = (n) => {
+  const arr = [];
+  let i = 2;
+  while (arr.length < n) {
+    if (isPrime(i)) {
+      arr.push(i);
+    }
+    i = i === 2 ? i + 1 : i + 2;
+  }
+  return arr;
+};
+
+// console.log(prime(5));
+// ======================================
+// 10. Write a function drawDown(chart)
+
+// ======================================
+// 11.
+
 // ======================================
 // 12. filterLt(n, arr)
 const filterLt = (n, arr) => {
@@ -137,7 +206,7 @@ const filterLt = (n, arr) => {
   return lessElement;
 };
 
-console.log(filterLt(112, [120, 112, 111, 130, 169, 101]));
+// console.log(filterLt(112, [120, 112, 111, 130, 169, 101]));
 
 // ======================================
 // 13. filterGt(n, arr)
@@ -152,7 +221,13 @@ const filterGt = (n, arr) => {
   return lessElement;
 };
 
-console.log(filterGt(0, [120, 112, 111, 130, 169, 101]));
+// console.log(filterGt(0, [120, 112, 111, 130, 169, 101]));
+
+// ======================================
+// 14.
+
+// ======================================
+// 15.
 
 // ======================================
 // 16. Write mean(arr) function
@@ -171,7 +246,40 @@ const mean = (arr) => {
   return arrMean;
 };
 
-console.log(mean([1, "foo", 3]));
+// console.log(mean([1, "foo", 3]));
+
+// ======================================
+// 17.
+
+// ======================================
+// 18.
+
+// ======================================
+// 19.
+
+// ======================================
+// 20.
+
+// ======================================
+// 21.
+
+// ======================================
+// 22.
+
+// ======================================
+// 23.
+
+// ======================================
+// 24.
+
+// ======================================
+// 25.
+
+// ======================================
+// 26.
+
+// ======================================
+// 27.
 
 // ======================================
 // 28. Write a function transpose(bits, w, h)
@@ -188,7 +296,7 @@ const transpose = (bits, w, h) => {
 };
 
 const imageBytes = [1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1];
-console.log(transpose(imageBytes, 4, 4));
+// console.log(transpose(imageBytes, 4, 4));
 
 // ======================================
 // 29. Write a function transposable(arr, w, h) returns boolean
@@ -198,7 +306,10 @@ const transposable = (arr, w, h) => {
 };
 
 const image = [1, 0, 1, 0, 1, 1];
-console.log(transposable(image, 2, 3));
+// console.log(transposable(image, 2, 3));
+
+// ======================================
+// 30.
 
 // ======================================
 // sample: fn(-20, [-1,-2,1,2,-100]) return [-1,-2]
