@@ -113,7 +113,7 @@ const getMax = (a, b) => Math.max(a, b);
 console.log(numsArr.reduce(getMax));
 
 // =================================
-// create function returns object
+// 5. create function returns object
 const empInfoArr = [
   ["cat", 2],
   ["dog", 3],
